@@ -26,7 +26,6 @@ public class InquiryController {
         }catch (Exception e){
             return ResponseEntity.ok(new Res("Does not exist",false));
         }
-
     }
     @PutMapping("/inquirycard")
     public ResponseEntity<?> getCustomerCard (@RequestBody InquiryDto accNo){

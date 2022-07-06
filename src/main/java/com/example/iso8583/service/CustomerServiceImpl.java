@@ -67,6 +67,7 @@ public class CustomerServiceImpl implements CustomerSerivce {
     public InquiryCardDto getCardNo(String accNo) {
         Customer entity= cusRep.findByInquiry(accNo);
         InquiryCardDto inquiry = new InquiryCardDto();
+        inquiry.setAcctNo(entity.getAcctNo());
         inquiry.setCardNo(entity.getCardNo());
 
         Transaction tx = new Transaction();
@@ -75,7 +76,7 @@ public class CustomerServiceImpl implements CustomerSerivce {
         Integer number = rand.nextInt(1000000000) + 1;
         Gson gson = new Gson();
         tx.setAcctNo(inquiry.getAcctNo());
-        tx.setBenId(inquiry.getCardNo());
+        tx.setCardNo(inquiry.getCardNo());
         tx.setDateTime(date);
         tx.setTrace(number);
         tx.setType("inquiry_card");
