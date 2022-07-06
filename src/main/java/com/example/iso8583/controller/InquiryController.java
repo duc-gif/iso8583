@@ -22,7 +22,7 @@ public class InquiryController {
     @PutMapping("/inquiry")
     public ResponseEntity<?> getCustomerBin (@RequestBody InquiryDto accNo){
         try {
-            return ResponseEntity.ok(new Res(customerService.getNumberNo(accNo.getAcctNo()),"customer information\n",true));
+            return ResponseEntity.ok(new Res(customerService.getNumberNo(accNo.getAcctNo()),"customer information",true));
         }catch (Exception e){
             return ResponseEntity.ok(new Res("Does not exist",false));
         }
@@ -31,7 +31,7 @@ public class InquiryController {
     @PutMapping("/inquirycard")
     public ResponseEntity<?> getCustomerCard (@RequestBody InquiryDto accNo){
         try {
-            return ResponseEntity.ok(new Res(customerService.getCardNo(accNo.getAcctNo()),"Card Information\n",true));
+            return ResponseEntity.ok(new Res(customerService.getCardNo(accNo.getAcctNo()),"Card Information",true));
         }catch (Exception e){
             return ResponseEntity.ok(new Res("Does not exist",false));
         }
